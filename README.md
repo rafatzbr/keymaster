@@ -11,7 +11,7 @@ Authorization Middleware for the APIKey Manager Gatekeeper
 3. Import the middleware
 +
 ```JavaScript
-const keymaster = require('keymaster');
+const keymaster = require('@rafatz/keymaster');
 ```
 
 4. Set the router endpoint to use the middleware

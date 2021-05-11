@@ -2,6 +2,9 @@
 const got = require('got');
 
 const apikeyauth = async (req, res, next) => {
+    if (!process.env.GATEKEEPER_URL || !process.env.GATEKEEPER_APP_ID) {
+        return next(new Error('In order to use Keymaster, set environment variables GATEKEEPER_URL and GATEKEEPER_APP_ID'));
+    }
     // Validate the apikey header
     if (
         !req.headers['authorization'] || 
